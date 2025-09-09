@@ -1,0 +1,227 @@
+/* Container */
+.fees-container {
+  background: linear-gradient(135deg, #e6f7ff, #ffffff);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 30px;
+  margin: 40px auto;
+  max-width: 750px;
+  width: 95%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Form elements */
+.fees-class {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0 20px 0;
+  background: rgba(255, 255, 255, 0.85);
+  outline: none;
+  font-size: 15px;
+  color: #2c3e50;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.fees-class:focus {
+  border: 1px solid #4a90e2;
+  background: #f0f8ff;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.4);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.form-grid label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.form-grid input,
+.form-grid select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.form-grid input:hover,
+.form-grid select:hover {
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.4);
+  transform: scale(1.02);
+}
+
+/* Month Selection */
+.month-combine {
+  padding: 10px 0;
+  width: 100%;
+}
+
+.month-combine > label {
+  font-size: 17px;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 15px 0;
+}
+
+/* Month card with custom checkbox */
+.month-card {
+  padding: 14px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2c3e50;
+  border: 1px solid transparent;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* hover effect */
+.month-card:hover {
+  background: #f0f8ff;
+  transform: translateY(-3px);
+  border: 1px solid #4a90e2;
+}
+
+/* Custom checkbox */
+.month-card input[type="checkbox"] {
+  accent-color: #4a90e2;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* ===== Table ===== */
+.table-container {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.report-table th,
+.report-table td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.report-table th {
+  background: #007bff;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.report-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.report-table tr:hover {
+  background: #e8f0ff;
+}
+
+/* ===== Total Section ===== */
+.total-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.total-section h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .form-section {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .report-results {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-table th,
+  .report-table td {
+    font-size: 13px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fees-container h2 {
+    font-size: 20px;
+  }
+
+  .form-section h3 {
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .report-table th,
+  .report-table td {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .total-section h3 {
+    font-size: 16px;
+  }
+}

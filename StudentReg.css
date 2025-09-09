@@ -1,0 +1,293 @@
+/* Whole page layout */
+.stu {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.9s ease-in-out;
+}
+
+/* Header */
+.headstu {
+  background-color: #dcdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.headstu img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.headstu h1 {
+  font-size: 22px;
+  color: #333;
+}
+
+.headstu ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.headstu ul li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.headstu ul li:hover {
+  color: #007bff;
+  transform: scale(1.2);
+}
+
+.headstu .logout {
+  color: red;
+}
+
+.stu-registered{
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  margin-top: 40px;
+  animation: slideInLeft 1.5s ease-in-out;
+}
+.stu-registered > h2{
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.stu-registered > button{
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #007bff;
+  box-shadow: 5px 5px 15px rgba(132, 176, 176, 0.537);
+  color: #fff;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  text-align: left;
+  opacity: 0; /* hidden at start */
+  animation: slideInLeft 1.5s ease forwards;
+}
+.stu-registered > button:hover{
+  background: #0056b3; 
+  transform: scale(1.1);
+}
+
+.class-registered {
+  width: 100%;
+  max-width: 800px;      /* keep it smaller, adjust as needed */
+  margin: 10px auto;     /* less gap outside */
+  padding: 8px 12px;     /* reduced padding inside */
+  background: #fff;
+  border-radius: 6px;    /* smaller rounded corners */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08); /* lighter shadow */
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  table-layout: fixed;   /* zaroori hai columns ko resize karne ke liye */
+}
+
+.report-table th,
+.report-table td {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+  overflow: hidden;       /* text cutoff */
+  text-overflow: ellipsis;/* agar jagah kam ho to ... show */
+}
+
+.report-table th {
+  background: #f1f1f1;
+  font-weight: 600;
+  position: relative;     /* resize handle ke liye */
+  user-select: none;      /* text select na ho handle kheenchne pe */
+}
+
+.resizer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  cursor: col-resize;
+  user-select: none;
+}
+
+/* Sidebar + Main content wrapper */
+.layout {
+  text-align: center;
+  display: flex;
+  flex: 1;
+  min-height: 100vh /* below header */
+}
+/* Sidebar */
+.sidenav {
+  width: 280px;
+  height: 100vh;
+  background: #ebebec;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 3px 3px 15px rgba(101, 99, 99, 0.537);
+  position: sticky;   /* stays in view */
+  top: 0;
+  animation: slideInLeft 0.8s ease-in-out;
+}
+
+.sidenav h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidenav button {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #007bff;
+  box-shadow: 5px 5px 15px rgba(132, 176, 176, 0.537);
+  color: #fff;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  opacity: 0; /* hidden at start */
+  animation: fadeIn 0.8s ease forwards;
+  transform: translateX(0);
+  transition: transform .3s ease, background-color .3s ease;
+}
+
+/* Staggered animation delays */
+.sidenav button:nth-child(1) { animation-delay: 0.3s; }
+.sidenav button:nth-child(2) { animation-delay: 0.5s; }
+.sidenav button:nth-child(3) { animation-delay: 0.7s; }
+.sidenav button:nth-child(4) { animation-delay: 0.9s; }
+.sidenav button:nth-child(5) { animation-delay: 1.1s; }
+.sidenav button:nth-child(6) { animation-delay: 1.3s; }
+
+.sidenav button:hover { 
+  /* border: 1.5px solid #88f7d3; */
+  background: #0056b3;
+}
+/* Main Section */
+.sect {
+  flex: 1;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 50px 20px;
+  animation: fadeIn 0.9s ease-in-out;
+}
+
+.sect h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+/* Registration box */
+.regStu {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.regStu .label {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.selectors {
+  display: flex;
+  gap: 20px;
+}
+
+#select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+select:focus {
+  border-color: #007bff;
+}
+
+#classreg{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.regbtn{
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #007bff;
+  box-shadow: 5px 5px 15px rgba(132, 176, 176, 0.537);
+  color: #fff;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  text-align: left;
+  opacity: 0; /* hidden at start */
+  animation: fadeIn 0.8s ease forwards;
+}
+.regbtn:hover{
+  background: #0056b3; 
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}

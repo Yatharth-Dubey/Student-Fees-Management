@@ -1,0 +1,27 @@
+.about-container {
+  padding: 40px;
+  background: #f9fafb;
+  min-height: 100vh;
+  animation: fadeIn 1.2s ease-in-out;
+}
+.about-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 100%;
+}
+.about-card h1 {
+  font-size: 40px;
+  align-content: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  animation: slideInLeft 2.0s ease-in-out;
+}
+.about-card p {
+  align-content: center;
+  color: #2c3e50;
+  font-size: 20px;
+  animation: slideInLeft 2.5s ease-in-out;
+}
